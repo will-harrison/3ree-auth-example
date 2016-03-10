@@ -2,10 +2,15 @@ import { compose,
          createStore,
          applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
+import createSagaMiddleware from 'redux-saga'
 import { syncHistory } from 'react-router-redux'
 import { browserHistory } from 'react-router'
 import { DevTools } from '../../views'
+
 import anchorApp from '../reducers'
+import sagas from '../sagas'
+
+
 import { authenticationRouter } from '../middleware'
 
 // Init
@@ -22,9 +27,11 @@ export let reduxRouterMiddleware
 if (typeof window !== 'undefined') {
   reduxRouterMiddleware = syncHistory(browserHistory)
   middleware = [
-    thunk,
+    // thunk,
     authenticationRouter,
-    reduxRouterMiddleware
+    reduxRouterMiddleware,
+    createSagaMiddleware(...sagas)
+
   ]
   rootReducer = anchorApp
   createStoreWithMiddleware = compose(

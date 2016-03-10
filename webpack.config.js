@@ -1,9 +1,11 @@
 var path = require('path')
 var webpack = require('webpack')
 
+
 var config = {
   devtool: 'eval-cheap-module-source-map',
   entry: [
+    'babel-polyfill',
     'webpack-hot-middleware/client?path=/__webpack_hmr&reload=true',
     './client/index'
   ],

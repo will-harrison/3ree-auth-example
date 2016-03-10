@@ -19,7 +19,7 @@ import { closeDbConnection,
 // =============
 const app = express()
 const server = Server(app)
-const port = 3000
+const port = 7001
 export const io = socketIo(server)
 
 // Server Middleware

@@ -7,7 +7,10 @@
     "react/jsx-uses-react": 1,
     "react/jsx-no-undef": 2,
     "react/wrap-multilines": 2,
-    "object-curly-spacing": [2, "always"]
+    "object-curly-spacing": [2, "always"],
+    "no-unused-vars": [1],
+    "no-constant-condition": 1,
+    "no-console": 1
   },
   "plugins": [
     "react"
